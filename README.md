@@ -18,8 +18,11 @@ And then execute:
 
 Add to Capfile
 
-    require_relative 'lib/capistrano/my'
+    require 'capistrano/tasks'
+    require 'capistrano/my'
     install_plugin Capistrano::My     
+
+    require 'capistrano/slackistrano'
 
 Add to deploy.rb
 
