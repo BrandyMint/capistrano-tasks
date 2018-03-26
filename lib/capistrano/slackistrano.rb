@@ -17,7 +17,7 @@ module Slackistrano
 
       revision_link = "#{fetch(:repo_url)}/compare/#{fetch(:previous_revision)}...#{fetch(:current_revision)}"
 
-      revision_link = revision_link.gsub('git@github.com:', 'https://github.com/').gsub(/\.git\/$/,'/')
+      revision_link = revision_link.gsub('git@github.com:', 'https://github.com/').gsub('.git/','/')
 
       data = {
         attachments: [{
@@ -32,7 +32,7 @@ module Slackistrano
             }
           ],
 
-          footer: "<#{revision_link}|Изменения на github.com>",
+          footer: "<#{revision_link}|Смотреть изменения на github.com>",
 
           thumb_url: fetch(:slackistrano_thumb_url),
           footer_icon: "https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png",
