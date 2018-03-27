@@ -4,7 +4,7 @@ module Slackistrano
   class CustomMessaging < Messaging::Base
     def payload_for_updating
       {
-        text: "#{deployer} начал развертывание ветки #{branch} приложения #{application} на #{stage}"
+        text: "#{deployer} разворачивает ветку #{branch} у #{application} на #{stage}"
       }
     end
 
