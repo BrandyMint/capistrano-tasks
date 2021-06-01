@@ -35,7 +35,7 @@ module Slackistrano
           footer: "<#{revision_link}|Смотреть изменения на github.com>",
 
           thumb_url: fetch(:slackistrano_thumb_url),
-          footer_icon: "https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png",
+          footer_icon: fetch(:slackistrano_footer_icon),
           fallback: super[:text]
         }]
       }
