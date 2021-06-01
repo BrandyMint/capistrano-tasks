@@ -13,7 +13,7 @@ module Slackistrano
     def payload_for_updated
       changelog = fetch(:changelog)
 
-      changelog.gsub!(/\(#(\d+)\)/, "(<%{repo_url}/pull/%{pr}|#%{pr}>)" % {repo_url: fetch(:repo_url), pr: '\1'}) unless changelog.empty?
+      changelog = changelog.gsub(/\(#(\d+)\)/, "(<%{repo_url}/pull/%{pr}|#%{pr}>)" % {repo_url: fetch(:repo_url), pr: '\1'}) unless changelog.empty?
 
       revision_link = "#{fetch(:repo_url)}/compare/#{fetch(:previous_revision)}...#{fetch(:current_revision)}"
 
@@ -28,7 +28,7 @@ module Slackistrano
           fields: [
             {
               title: 'Изменения',
-              value: changelog || 'не обнаружены'
+              value: changelog || 'неизвестны'
             }
           ],
 
